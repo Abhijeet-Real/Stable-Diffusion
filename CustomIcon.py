@@ -22,3 +22,4 @@ def rand(root, icon_dir = ""):
     rand = random.randint(0, len_full_path-1)
 
     root.iconbitmap(full_path[rand])
+    

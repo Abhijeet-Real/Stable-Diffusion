@@ -52,3 +52,4 @@ def main(object = None, num_inference_steps = 1, guidance_scale = 1, internet = 
     os.makedirs("Images", exist_ok=True)
     image.save(os.path.join("Images", filename))
     print(f"Image saved as {filename}")
+    

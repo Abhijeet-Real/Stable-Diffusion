@@ -24,3 +24,4 @@ def login_to_huggingface(file_path=r"D:\Stable Diffusion\Hugging Face"):
         print(f"Error: The file '{file_path}' was not found.")
     except Exception as e:
         print(f"Login failed:")
+        

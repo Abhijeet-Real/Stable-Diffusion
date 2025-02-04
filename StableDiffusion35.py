@@ -59,3 +59,4 @@ def generate_image(prompt, num_inference_steps=30, guidance_scale=5, internet=Tr
     image = pipe(prompt, num_inference_steps=num_inference_steps, guidance_scale=guidance_scale).images[0]
 
     return image
+

@@ -5,3 +5,5 @@ __pycache__/
 desktop.ini
 HuggingFace/
 Images/
+git_ssh_key.pub
+git_ssh_key

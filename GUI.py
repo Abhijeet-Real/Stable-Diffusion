@@ -22,9 +22,7 @@ class ImageGenerationThread(QThread):
         # Call the main function for image generation with provided parameters
         main(object=[self.filename, self.prompt],
              num_inference_steps=self.num_inference_steps,
-             guidance_scale=self.guidance_scale,
-             internet=self.internet,
-             fast=self.fast)
+             guidance_scale=self.guidance_scale)
         # Emit the finished signal when done
         self.finished.emit()
 

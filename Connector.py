@@ -31,7 +31,7 @@ def generate_unique_filename(filename):
 
     return filename
 
-def main(object = None, num_inference_steps = 1, guidance_scale = 1, internet = True, fast = True):
+def main(object = None, num_inference_steps = 40, guidance_scale = 25):
 
     # Picks a prompt for me from predefined prompt
     if object is None:

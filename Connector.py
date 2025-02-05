@@ -50,6 +50,12 @@ def main(object = None, num_inference_steps = 40, guidance_scale = 25):
     filename = generate_unique_filename(object[0])
     # Ensure the "Images" folder exists
     os.makedirs("Images", exist_ok=True)
-    image.save(os.path.join("Images", filename))
-    print(f"Image saved as {filename}")
+    try:
+        image.save(os.path.join("Images", filename))
+    except Exception as e:
+        print(f"Error saving image: {e}")
+    else:
+        print(f"Image saved as {filename}")
+    finally:
+        return
     

@@ -1,8 +1,9 @@
 from huggingface_hub import login
 import Config
+import os
 
 # Ensure user is logged in
-def login_to_huggingface(file_path=r"D:\Stable Diffusion\Hugging Face"):
+def login_to_huggingface(file_path="Hugging Face"):  # Relative Path
     token, username, website = None, None, None
     try:
         with open(file_path, "r") as file:
@@ -23,5 +24,4 @@ def login_to_huggingface(file_path=r"D:\Stable Diffusion\Hugging Face"):
     except FileNotFoundError:
         print(f"Error: The file '{file_path}' was not found.")
     except Exception as e:
-        print(f"Login failed:")
-        
+        print("Login failed:", str(e))

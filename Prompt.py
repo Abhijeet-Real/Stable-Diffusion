@@ -1,103 +1,136 @@
 prompt_list = [
 ["Cyberpunk Cityscape", 
-"A futuristic cityscape with towering skyscrapers, neon lights, and technology seamlessly blending with nature.",
-"A cyberpunk city at night, drenched in rain and illuminated by glowing advertisements.",
-"A vibrant and bustling cyber city with flying cars and towering holographic billboards."],
+"A futuristic city with neon lights and flying cars.",
+"A rainy cyber city at night, glowing with advertisements.",
+"A bustling cyber world with holograms and tech."],
 
 ["Ancient Library",
-"A mysterious library filled with ancient books, illuminated by candlelight, and holding secrets of the past.",
-"An endless library with towering bookshelves, dusty tomes, and a magical aura.",
-"A dimly lit ancient library, filled with scrolls and enchanted artifacts from forgotten times."],
+"A library with old books and candlelight.",
+"An endless library with dusty tomes and magic.",
+"A dimly lit library with scrolls and artifacts."],
 
 ["Floating Island",
-"An island floating in the sky with cascading waterfalls and lush greenery atop towering rocks.",
-"A magical floating island with a castle, surrounded by clouds and shimmering in sunlight.",
-"A serene floating island with flowers, trees, and wildlife overlooking the vast blue sky."],
+"A floating island with waterfalls and greenery.",
+"A magical island with a castle and clouds.",
+"A serene island above the blue sky."],
 
 ["Dragon's Lair",
-"A dragon’s lair filled with treasure and ancient relics, glowing in the dark with the dragon guarding its hoard.",
-"A mysterious cave filled with gold, gems, and a sleeping dragon coiled around its wealth.",
-"An enormous dragon's lair with smoke and embers, lined with precious stones and artifacts."],
+"A lair filled with treasure and a fierce dragon.",
+"A cave with gold, gems, and a sleeping dragon.",
+"A dragon’s lair with smoke and precious stones."],
 
 ["Mystical Forest",
-"A dense forest with bioluminescent plants, glowing creatures, and a mystical aura surrounding it.",
-"An enchanted forest filled with magical creatures and misty trails leading deeper into the unknown.",
-"A lush green forest with shimmering lights and hidden secrets within its depths."],
+"A forest with glowing plants and magic.",
+"An enchanted forest with mystical creatures.",
+"A lush forest with shimmering hidden secrets."],
 
 ["Robotic Companion",
-"A sleek and friendly robot companion designed for assistance, with a unique, futuristic look.",
-"A small, adorable robotic assistant with glowing eyes, made for helping around the home.",
-"A high-tech robotic companion equipped with AI, ready to assist and interact with humans."],
+"A sleek, futuristic robotic assistant.",
+"A cute AI robot with glowing eyes.",
+"A high-tech robotic helper for humans."],
 
 ["Abandoned Spaceship",
-"A massive spaceship floating in deep space, dark and silent, with lights flickering in abandoned corridors.",
-"An ancient spaceship left adrift, with worn-out controls and eerie silence filling the halls.",
-"A derelict spaceship, half-buried in an alien landscape, with broken windows and exposed wires."],
+"A dark spaceship drifting in deep space.",
+"An ancient ship with worn-out controls.",
+"A derelict ship buried in an alien world."],
 
 ["Majestic Waterfall",
-"A breathtaking waterfall surrounded by dense forest and exotic flora, with mist rising from the pool below.",
-"A powerful waterfall cascading down into a serene lake, surrounded by lush greenery.",
-"A tall waterfall in a pristine jungle, with sunlight glinting off the rushing water."],
+"A waterfall surrounded by exotic flora.",
+"A powerful cascade into a serene lake.",
+"A tall waterfall in a pristine jungle."],
 
 ["Magician's Study",
-"A cozy study filled with potions, ancient spellbooks, and mystical artifacts of a practicing magician.",
-"An old, cluttered room with magical artifacts, scrolls, and an aura of mystical energy.",
-"A magician's study with shelves of books, a crystal ball, and tools for spellcasting."],
+"A study with potions and ancient books.",
+"A cluttered room with magical artifacts.",
+"A magician’s study with spells and tools."],
 
 ["Time Traveler’s Watch",
-"A beautifully crafted watch with mystical symbols, capable of controlling time and opening portals.",
-"An intricate, ancient-looking watch with gears and symbols, with an aura of temporal magic.",
-"A time-traveling watch glowing faintly, with a sense of mystery and ancient power."],
+"A mystical watch controlling time and portals.",
+"An ancient watch with gears and magic.",
+"A glowing time-traveling watch of mystery."],
 
 ['Ship.png',
-'''A grand, three-masted sailing ship cuts through turquoise waves, its sails billowing against a sunny sky.\n
-The crew works diligently as the wooden vessel moves steadily, with seagulls flying nearby, enhancing the adventurous spirit of the high seas.''',
-
-'''A sleek, modern yacht glides smoothly through a calm, open ocean under a star-filled sky.\n
-The lights from the vessel cast a soft glow on the water, creating a serene and luxurious scene of nighttime elegance and freedom.''',
-
-'''A weathered pirate ship drifts mysteriously through fog-laden waters, its tattered sails and ancient hull hinting at countless untold adventures.\n
-Lanterns flicker in the mist, adding an eerie, ghostly charm to the ship’s storied silhouette against the dark horizon.'''],
+"A grand sailing ship on turquoise waves.",
+"A yacht on calm waters under starlight.",
+"A pirate ship drifting in eerie fog."],
 
 ['Dragon.png',
-'''A fierce, emerald-scaled dragon stands atop a jagged cliff, with wings spread wide against a stormy sky.\n
-His golden eyes gleam with ancient wisdom, and his powerful stance emanates strength and authority over the wild landscape below.''',
-
-'''A majestic, ice-blue dragon soars through snow-covered mountains, her crystalline scales glinting under the winter sun.\n
-Graceful and swift, she embodies the ethereal beauty of the frozen wilderness, leaving a frosty trail in her wake.''',
-
-'''A gentle, bronze-hued dragon curls around a field of wildflowers, resting her head amidst the blooms.\n
-Her massive yet graceful form radiates warmth, and her peaceful, closed eyes give her a tranquil presence, blending seamlessly with the natural beauty of the meadow.''' ],
+"An emerald dragon stands on a stormy cliff.",
+"An ice-blue dragon soars over snowy peaks.",
+"A bronze dragon rests among wildflowers."],
 
 ['Cat.png',
-'''A sleek, black Persian cat lounges elegantly on a windowsill, her piercing green eyes watching the world outside.\n
-Her soft, flowing coat glimmers in the sunlight, giving her an air of mystery and elegance against the bright outdoor backdrop.''',
-
-'''A fluffy orange tabby with expressive eyes perches on a rustic wooden table, her gaze fixed intently on something across the room.\n
-She looks alert and curious, the striped fur on her tail bristling slightly as she observes her surroundings.''',
-
-'''A small gray Scottish Fold cat with folded ears rests contentedly in a sunlit corner of a modern apartment.\n
-Her gentle, rounded face and calm demeanor exude a quiet charm, perfectly blending with the minimalist decor of her cozy home.'''],
+"A black Persian cat lounges on a windowsill.",
+"An orange tabby watches from a wooden table.",
+"A gray Scottish Fold naps in the sun."],
 
 ['Dog.png',
-'''A golden retriever with a soft, glossy coat sits proudly on a lush green lawn.\n
-His friendly eyes and wagging tail exude warmth and loyalty, making him an ideal companion in a suburban backyard filled with sun-dappled trees.''',
-     
-'''A sleek black German shepherd with alert ears stands on a rocky mountain path.\n
-Muscular and focused, he gazes into the distance, embodying strength and readiness as mist rolls in around him, adding to his majestic presence.''',
-     
-'''A tiny, playful beagle with a tri-colored coat bounces around a cozy living room.\n
-His floppy ears and curious eyes capture an endless sense of wonder, as he happily chases his favorite plush toy across the soft rug.'''],
+"A golden retriever sits on a green lawn.",
+"A black shepherd stands on a rocky path.",
+"A playful beagle bounces in a living room."],
 
 ['Model.png',
-'''A model stands in an open, desolate landscape, wearing a bold, red two-piece outfit with a cut-out midriff and long sleeves.\n
-Her blonde hair flows softly, exuding confidence and elegance against the stark, minimalist background.''', 
+"A model in a bold red outfit outside.",
+"A model stuns in a red chiffon saree.",
+"A Korean model sits in a velvet saree."],
 
-'''The White model stuns in a vibrant red chiffon saree, styled in a modern drape with a high-waist belt.\n
-Her sleek, pulled-back hair accentuates statement gold earrings and bold makeup.\n
-She stands confidently in an urban rooftop setting, exuding bold, contemporary charm, seamlessly blending traditional elegance with a chic twist.''',
-     
-'''The Korean model sits gracefully on an ornate wooden chair in a traditional courtyard, draped in a deep red velvet saree with intricate silver embroidery.\n
-Her hair falls in loose waves, adorned with jasmine flowers.\n
-Leaning slightly, she gazes thoughtfully to the front, exuding a serene, timeless elegance in this tranquil setting.''']
+['Castle.png',
+"A towering castle with misty surroundings.",
+"A medieval castle glowing under moonlight.",
+"An ancient fortress atop a steep cliff."],
+
+['Sunset.png',
+"A golden sunset over a calm ocean.",
+"A fiery sunset behind mountain silhouettes.",
+"A vibrant sunset over a tranquil meadow."],
+
+['Desert.png',
+"A vast desert with rolling sand dunes.",
+"A lone traveler crossing a hot desert.",
+"A mirage shimmering in the desert heat."],
+
+['Galaxy.png',
+"A spiral galaxy filled with colorful stars.",
+"A cosmic nebula glowing in deep space.",
+"A breathtaking view of interstellar clouds."],
+
+['Jungle.png',
+"A dense jungle with towering ancient trees.",
+"A hidden temple deep in the jungle.",
+"A jungle filled with exotic wildlife sounds."],
+
+['Robot.png',
+"A humanoid robot in a futuristic city.",
+"A battle-worn robot standing tall.",
+"A cute AI-powered robot exploring Earth."],
+
+['Ocean.png',
+"Crystal-clear ocean waves hitting rocky shores.",
+"A deep blue ocean with mysterious creatures.",
+"A ship sailing on endless waters."],
+
+['Village.png',
+"A peaceful village in a snowy landscape.",
+"A cozy village surrounded by autumn trees.",
+"A medieval village with stone houses."],
+
+['Temple.png',
+"An ancient temple in a hidden valley.",
+"A majestic temple glowing in twilight.",
+"A ruined temple covered in green moss."],
+
+['Winter.png',
+"A snowy forest with tall pine trees.",
+"A winter cabin covered in fresh snow.",
+"A frozen lake reflecting the morning sun."],
+
+['Cave.png',
+"A dark cave filled with glowing crystals.",
+"A hidden cave behind a waterfall.",
+"A mysterious cave with ancient paintings."],
+
+['Sky.png',
+"A dreamy sky filled with floating islands.",
+"A bright sky with drifting airships.",
+"A surreal sky painted with auroras." ]
 ]

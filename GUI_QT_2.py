@@ -1,4 +1,4 @@
-import random, sys, Config
+import random, sys, os, Config
 from PyQt5 import QtWidgets, QtGui, QtCore
 from PyQt5.QtCore import QThread, pyqtSignal
 from PIL import Image, ImageFilter, ImageQt
@@ -36,7 +36,7 @@ class StableDiffusionGUI(QtWidgets.QWidget):
     def initUI(self):
         # Set window properties
         self.setWindowTitle("Stable Diffusion Image Generator")
-        self.setWindowIcon(QtGui.QIcon(r"D:\Stable Diffusion\Stable Diffusion Icon.ico"))
+        self.setWindowIcon(QtGui.QIcon(os.path.join(os.getcwd(), "Stable Diffusion Icon.ico")))
         self.setGeometry(100, 100, 500, 355)
 
         # Background label for displaying the image
@@ -98,7 +98,7 @@ class StableDiffusionGUI(QtWidgets.QWidget):
         self.prompt_edit.setPlainText(random_prompt)
 
     def showEvent(self, event):
-        bg_image_path = r"D:\Stable Diffusion\Stable Diffusion Background.jpg"
+        bg_image_path = os.path.join(os.getcwd(), "Stable Diffusion Background.jpg")
         pil_image = Image.open(bg_image_path)
         blurred_image = pil_image.filter(ImageFilter.GaussianBlur(0))
 

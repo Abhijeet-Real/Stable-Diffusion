@@ -13,7 +13,7 @@ def rand(root, icon_dir = ""):
         key = winreg.OpenKey(winreg.HKEY_CURRENT_USER, fr"Software\Microsoft\Windows\CurrentVersion\Explorer\User Shell Folders")
         # Retrieve the path from the registry
         pic_dir, _ = winreg.QueryValueEx(key, 'My Pictures')
-        icon_dir = os.path.join(pic_dir, "Default/Icon")
+        icon_dir = os.path.join(pic_dir, "Archive/Folder Ico")
 
     icon_List = os.listdir(icon_dir)
     full_path = [os.path.join(icon_dir, basename) for basename in icon_List if basename.endswith('.ico')]

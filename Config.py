@@ -27,7 +27,6 @@ def set_debug_level():
     """Set debug level to warning and handle failures."""
     try:
         os.environ["TRANSFORMERS_VERBOSITY"] = "warning"
-        print("Debug level set to WARNING.")
     except Exception as e:
         print(f"Failed to set debug level: {e}")
 

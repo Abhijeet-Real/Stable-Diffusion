@@ -2,6 +2,7 @@ from diffusers import StableDiffusion3Pipeline
 import torch
 from HuggingFaceLogin import login_to_huggingface
 import Config
+import logging
 
 # Function to generate an image using Stable Diffusion 3.5 with customizable parameters
 def generate_image(prompt, num_inference_steps=40, guidance_scale=25): 
@@ -19,10 +20,10 @@ def generate_image(prompt, num_inference_steps=40, guidance_scale=25):
         pipe = StableDiffusion3Pipeline.from_pretrained(
             model, torch_dtype=torch.float16, local_files_only=True
         ).to("cuda")
+        logging.info(f"Loaded {model} from Local environment")
         
     except Exception as e: 
-        print(f"Failed to load {model} from Local environment") 
-        
+        logging.error(f"Failed to load {model} from Local environment: {e}")        
         # Attempt login
         login_to_huggingface()
         
@@ -31,16 +32,13 @@ def generate_image(prompt, num_inference_steps=40, guidance_scale=25):
             pipe = StableDiffusion3Pipeline.from_pretrained(
                 model, torch_dtype=torch.float16, local_files_only=False
             ).to("cuda")
+            logging.info(f"Loaded {model} from Hugging Face Hub")
         except Exception as e_local:
-            print(e_local, "Couldn't connect to the Hub.")
+            logging.error(f"Error loading model from Hugging Face Hub: {e_local}")
             return None  # Exit if model cannot be loaded
-        else:
-            print(f"Loaded {model} from Hub.")
-    else:
-        print(f"Loaded {model} from Local environment")
     
     if pipe is None:
-        print(f"Error: {model} pipeline could not be initialized.")
+        logging.error(f"Error: {model} pipeline could not be initialized.")
         return None
 
 

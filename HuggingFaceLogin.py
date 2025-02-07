@@ -1,6 +1,7 @@
 from huggingface_hub import login
 import Config
 import os
+import logging
 
 # Ensure user is logged in
 def login_to_huggingface(file_path="Hugging Face"):  # Relative Path
@@ -18,10 +19,10 @@ def login_to_huggingface(file_path="Hugging Face"):  # Relative Path
         
         if token:
             login(token)
-            print(f"Logged in as {username} on {website}")
+            logging.info(f"Logged in as {username} on {website}")
         else:
-            print("Token not found. Please check the file.")
+            logging.error("Token not found. Please check the file.")
     except FileNotFoundError:
-        print(f"Error: The file '{file_path}' was not found.")
+        logging.error(f"Error: The file '{file_path}' was not found.")
     except Exception as e:
-        print("Login failed:", str(e))
+        logging.error("Login failed:", str(e))

@@ -1,4 +1,7 @@
-import random, sys, os, Config
+import os
+import sys
+import random
+import Config
 from PyQt5 import QtWidgets, QtGui, QtCore
 from PyQt5.QtCore import QThread, pyqtSignal
 from PIL import Image, ImageFilter, ImageQt

@@ -1,6 +1,6 @@
+import logging
 from huggingface_hub import login
 import Config
-import logging
 
 # Ensure user is logged in
 def login_to_huggingface(file_path="Hugging Face"):  # Relative Path

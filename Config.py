@@ -12,9 +12,8 @@ os.makedirs(huggingface_cache_dir, exist_ok=True)
 os.environ["HF_HOME"] = huggingface_cache_dir
 os.environ["CUDA_LAUNCH_BLOCKING"] = "1"
 os.environ["HF_HUB_DISABLE_SYMLINKS_WARNING"] = "1"
-# os.environ["PYTORCH_CUDA_ALLOC_CONF"] = "max_split_size_mb:128"
 
 # Configure logging
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+logging.basicConfig(level=logging.WARNING, format='%(asctime)s - %(levelname)s - %(message)s')
 
 warnings.filterwarnings("ignore")  # Ignore all warnings

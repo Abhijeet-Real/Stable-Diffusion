@@ -1,6 +1,5 @@
 from huggingface_hub import login
 import Config
-import os
 import logging
 
 # Ensure user is logged in

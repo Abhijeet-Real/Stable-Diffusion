@@ -28,9 +28,11 @@ def enhance_prompt(prompt: str, model_name: str = "Gustavosta/MagicPrompt-Stable
     
     try:
         # Attempt to load the model from the local environment (cache)
-        generator = pipeline("text-generation", model=model_name, device=0 if torch.cuda.is_available() else -1, truncation=True)
+        generator = pipeline("text-generation", model=model_name,
+                              device=0 if torch.cuda.is_available() else -1, 
+                              truncation=True,
+                              pad_token_id=50256)
         model_source = "Local Environment"
-        logging.info(f"Loaded {model_name} from Local Environment")
     except Exception:
         logging.warning(f"Failed to load {model_name} from Local Environment, trying Hugging Face Hub")
         
@@ -38,9 +40,11 @@ def enhance_prompt(prompt: str, model_name: str = "Gustavosta/MagicPrompt-Stable
         login_to_huggingface()
         
         try:
-            generator = pipeline("text-generation", model=model_name, device=0 if torch.cuda.is_available() else -1)
+            generator = pipeline("text-generation", model=model_name, 
+                                 device=0 if torch.cuda.is_available() else -1, 
+                                 truncation=True,
+                                 pad_token_id=50256)
             model_source = "Hugging Face Hub"
-            logging.info(f"Loaded {model_name} from Hugging Face Hub")
         except Exception as e:
             logging.error(f"Error loading model: {e}")
             return None
@@ -50,7 +54,7 @@ def enhance_prompt(prompt: str, model_name: str = "Gustavosta/MagicPrompt-Stable
         return None
     
     # Generate enhanced prompt with a maximum of 50 tokens
-    response = generator(prompt, max_length=max_length, do_sample=True, truncation=True)
+    response = generator(prompt, max_length=max_length, do_sample=True, truncation=True, pad_token_id=50256)
     
     # Clear GPU memory after processing
     torch.cuda.empty_cache()

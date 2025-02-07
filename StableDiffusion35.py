@@ -1,8 +1,12 @@
-from diffusers import StableDiffusion3Pipeline
+import logging
+
 import torch
+from diffusers import StableDiffusion3Pipeline
+from transformers import CLIPTokenizer
+
 from HuggingFaceLogin import login_to_huggingface
 import Config
-import logging
+
 
 # Function to generate an image using Stable Diffusion 3.5 with customizable parameters
 def generate_image(prompt, num_inference_steps=40, guidance_scale=25): 
@@ -14,11 +18,13 @@ def generate_image(prompt, num_inference_steps=40, guidance_scale=25):
 
     # Define the model
     model = "stabilityai/stable-diffusion-3.5-medium"
+
+    tokenizer = CLIPTokenizer.from_pretrained("openai/clip-vit-large-patch14")
     
     try:
         # Attempt to load the model with Local environment
         pipe = StableDiffusion3Pipeline.from_pretrained(
-            model, torch_dtype=torch.float16, local_files_only=True
+            model, torch_dtype=torch.float16, local_files_only=True, tokenizer=tokenizer
         ).to("cuda")
         logging.info(f"Loaded {model} from Local environment")
         
@@ -30,7 +36,7 @@ def generate_image(prompt, num_inference_steps=40, guidance_scale=25):
         # Try loading the model from Hugging Face hub
         try:
             pipe = StableDiffusion3Pipeline.from_pretrained(
-                model, torch_dtype=torch.float16, local_files_only=False
+                model, torch_dtype=torch.float16, local_files_only=False, tokenizer=tokenizer
             ).to("cuda")
             logging.info(f"Loaded {model} from Hugging Face Hub")
         except Exception as e_local:

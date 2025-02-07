@@ -28,7 +28,7 @@ def enhance_prompt(prompt: str, model_name: str = "Gustavosta/MagicPrompt-Stable
     
     try:
         # Attempt to load the model from the local environment (cache)
-        generator = pipeline("text-generation", model=model_name, device=0 if torch.cuda.is_available() else -1)
+        generator = pipeline("text-generation", model=model_name, device=0 if torch.cuda.is_available() else -1, truncation=True)
         model_source = "Local Environment"
         logging.info(f"Loaded {model_name} from Local Environment")
     except Exception:
@@ -50,7 +50,7 @@ def enhance_prompt(prompt: str, model_name: str = "Gustavosta/MagicPrompt-Stable
         return None
     
     # Generate enhanced prompt with a maximum of 50 tokens
-    response = generator(prompt, max_length=max_length, do_sample=True)
+    response = generator(prompt, max_length=max_length, do_sample=True, truncation=True)
     
     # Clear GPU memory after processing
     torch.cuda.empty_cache()

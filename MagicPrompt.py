@@ -2,6 +2,11 @@ from transformers import pipeline
 import torch
 from HuggingFaceLogin import login_to_huggingface
 import Config
+import logging
+
+# Configure logging
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+
 
 def enhance_prompt(prompt: str, model_name: str = "Gustavosta/MagicPrompt-Stable-Diffusion", max_length: int = 50):
     """
@@ -25,9 +30,9 @@ def enhance_prompt(prompt: str, model_name: str = "Gustavosta/MagicPrompt-Stable
         # Attempt to load the model from the local environment (cache)
         generator = pipeline("text-generation", model=model_name, device=0 if torch.cuda.is_available() else -1)
         model_source = "Local Environment"
-        print(f"Loaded {model_name} from Local Environment")
+        logging.info(f"Loaded {model_name} from Local Environment")
     except Exception:
-        print(f"Failed to load {model_name} from Local Environment, trying Hugging Face Hub")
+        logging.warning(f"Failed to load {model_name} from Local Environment, trying Hugging Face Hub")
         
         # Authenticate only when needed
         login_to_huggingface()
@@ -35,13 +40,13 @@ def enhance_prompt(prompt: str, model_name: str = "Gustavosta/MagicPrompt-Stable
         try:
             generator = pipeline("text-generation", model=model_name, device=0 if torch.cuda.is_available() else -1)
             model_source = "Hugging Face Hub"
-            print(f"Loaded {model_name} from Hugging Face Hub")
+            logging.info(f"Loaded {model_name} from Hugging Face Hub")
         except Exception as e:
-            print(f"Error loading model: {e}")
+            logging.error(f"Error loading model: {e}")
             return None
     
     if generator is None:
-        print(f"Error: {model_name} pipeline could not be initialized.")
+        logging.error(f"Error: {model_name} pipeline could not be initialized.")
         return None
     
     # Generate enhanced prompt with a maximum of 50 tokens

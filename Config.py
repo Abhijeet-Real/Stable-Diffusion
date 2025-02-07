@@ -1,6 +1,6 @@
 import os
 import warnings
-import torch
+import logging
 
 # Use a relative path based on the working directory
 huggingface_cache_dir = os.path.join(os.getcwd(), "HuggingFace", "HuggingFaceCache")
@@ -12,26 +12,9 @@ os.makedirs(huggingface_cache_dir, exist_ok=True)
 os.environ["HF_HOME"] = huggingface_cache_dir
 os.environ["CUDA_LAUNCH_BLOCKING"] = "1"
 os.environ["HF_HUB_DISABLE_SYMLINKS_WARNING"] = "1"
-os.environ["PYTORCH_CUDA_ALLOC_CONF"] = "max_split_size_mb:128"
+# os.environ["PYTORCH_CUDA_ALLOC_CONF"] = "max_split_size_mb:128"
 
+# Configure logging
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
-def suppress_all_warnings():
-    """Suppress all warnings globally."""
-    warnings.filterwarnings("ignore")  # Ignore all warnings
-    if torch.cuda.is_available():
-        torch.backends.cudnn.benchmark = False  # Prevent potential CUDA warnings
-    warnings.simplefilter("ignore")
-
-
-def set_debug_level():
-    """Set debug level to warning and handle failures."""
-    try:
-        os.environ["TRANSFORMERS_VERBOSITY"] = "warning"
-    except Exception as e:
-        print(f"Failed to set debug level: {e}")
-
-
-# Suppress warnings when Config is imported
-suppress_all_warnings()
-# Set debug level
-set_debug_level()
+warnings.filterwarnings("ignore")  # Ignore all warnings

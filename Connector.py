@@ -3,6 +3,8 @@ import Prompt
 import random
 from MagicPrompt import enhance_prompt
 import Config
+import logging
+
 
 def generate_unique_filename(filename):
     """
@@ -53,9 +55,9 @@ def main(object = None, num_inference_steps = 40, guidance_scale = 25):
     try:
         image.save(os.path.join("Images", filename))
     except Exception as e:
-        print(f"Error saving image: {e}")
+        logging.error(f"Error saving image: {e}")
     else:
-        print(f"Image saved as {filename}")
+        logging.info(f"Image saved as {filename}")
     finally:
         return
     

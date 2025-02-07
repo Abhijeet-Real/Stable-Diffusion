@@ -7,3 +7,7 @@ HuggingFace/
 Images/
 git_ssh_key.pub
 git_ssh_key
+build/
+dist/
+Generative Image AI.spec
+Generative Image AI.exe

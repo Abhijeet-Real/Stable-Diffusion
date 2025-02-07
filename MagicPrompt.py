@@ -1,8 +1,8 @@
-from transformers import pipeline
+import logging
 import torch
+from transformers import pipeline
 from HuggingFaceLogin import login_to_huggingface
 import Config
-import logging
 
 # Configure logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')

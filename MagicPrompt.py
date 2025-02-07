@@ -55,7 +55,7 @@ def enhance_prompt(prompt: str, model_name: str = "Gustavosta/MagicPrompt-Stable
     # Clear GPU memory after processing
     torch.cuda.empty_cache()
     
-    print(f"{model_name} was loaded from: {model_source}")
-    print(f"Enhanced Prompt: {response[0]['generated_text']}")  # Print the enhanced prompt
+    logging.info(f"{model_name} was loaded from: {model_source}")
+    logging.info(f"Enhanced Prompt: {response[0]['generated_text']}")  # Log the enhanced prompt
     
     return response[0]['generated_text']

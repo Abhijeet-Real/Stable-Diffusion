@@ -1,9 +1,10 @@
 import os
-import Prompt
 import random
-from MagicPrompt import enhance_prompt
-import Config
 import logging
+
+from MagicPrompt import enhance_prompt
+import Prompt
+import Config
 
 
 def generate_unique_filename(filename):

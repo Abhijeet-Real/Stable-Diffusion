@@ -1,4 +1,6 @@
-import os, random, winreg
+import os
+import random
+import winreg
 
 def set(root, address):
     basename = os.path.basename(address)

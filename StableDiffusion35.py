@@ -27,7 +27,7 @@ def generate_image(prompt, num_inference_steps=40, guidance_scale=25):
             model, torch_dtype=torch.float16, local_files_only=True, tokenizer=tokenizer
         ).to("cuda")
         logging.info(f"Loaded {model} from Local environment")
-        
+
     except Exception as e: 
         logging.error(f"Failed to load {model} from Local environment: {e}")        
         # Attempt login
@@ -47,7 +47,6 @@ def generate_image(prompt, num_inference_steps=40, guidance_scale=25):
         logging.error(f"Error: {model} pipeline could not be initialized.")
         return None
 
-
     # Enable memory-saving options
     pipe.enable_attention_slicing()
     pipe.enable_model_cpu_offload()
@@ -58,5 +57,5 @@ def generate_image(prompt, num_inference_steps=40, guidance_scale=25):
 
     # Generate the image with specified enhanced_prompt and parameters
     image = pipe(prompt, num_inference_steps=num_inference_steps, guidance_scale=guidance_scale).images[0]
-
+    
     return image

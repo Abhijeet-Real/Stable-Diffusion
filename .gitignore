@@ -11,3 +11,5 @@ build/
 dist/
 Generative Image AI.spec
 Generative Image AI.exe
+.dockerignore
+Dockerfile

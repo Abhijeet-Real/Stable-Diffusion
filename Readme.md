@@ -23,7 +23,7 @@ Ensure you have the following installed:
 ### Setup
 1. Clone the repository:
    ```sh
-   git clone https://github.com/your-repo/stable-diffusion-gui.git
+   git clone https://github.com/Abhijeet-Real/stable-diffusion.git
    cd stable-diffusion-gui
    ```
 2. Install dependencies:
